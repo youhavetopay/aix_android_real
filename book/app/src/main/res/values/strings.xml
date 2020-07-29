@@ -1,0 +1,211 @@
+<resources>
+    <string name="app_name">book</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    //HomeFragment
+    <string name="oval1">경진대회\n(교내/외)</string>
+    <string name="oval2">활동</string>
+    <string name="oval3">특강</string>
+    <string name="oval4">자격증</string>
+    <string name="oval5">교육</string>
+    <string name="oval6">프로젝트\n및 봉사</string>
+    <string name="oval7">융합연계전공\n및 연구활동</string>
+    <string name="oval8">논문 및\n홍보, 모집</string>
+
+
+    //activity_contest 경진대회
+    <string name="con_oval1">AI SW\n경진대회\n참가</string>
+    <string name="con_oval2">AI SW\n경진대회\n입상</string>
+    <string name="con_oval3">동서인\n아이디어\n참가</string>
+    <string name="con_oval4">동서인\n아이디어\n입상</string>
+    <string name="con_oval5">창의\n발명품\n참가</string>
+    <string name="con_oval6">창의\n발명품\n입상</string>
+    <string name="con_oval7">수기\n공모전\n참가</string>
+    <string name="con_oval8">교외\n경진대회\n참가</string>
+    <string name="con_oval9">교외\n경진대회\n참가</string>
+    <string name="con_oval10">교외\n경진대회\n참가</string>
+    <string name="con_oval11">교외\n경진대회\n참가</string>
+    <string name="con_oval12">교외\n경진대회\n참가</string>
+    <string name="con_oval13">교외\n경진대회\n참가</string>
+    <string name="con_oval14">교외\n경진대회\n참가</string>
+    <string name="con_oval15">교외\n경진대회\n입상</string>
+    <string name="con_oval16">교외\n경진대회\n입상</string>
+    <string name="con_oval17">교외\n경진대회\n입상</string>
+    <string name="con_oval18">교외\n경진대회\n입상</string>
+    <string name="con_oval19">교외\n경진대회\n입상</string>
+    <string name="con_oval20">교외\n경진대회\n입상</string>
+
+
+    //activity_activity 활동
+    <string name="act_oval1">국내/외\n인턴십</string>
+    <string name="act_oval2">국내/외\n인턴십</string>
+    <string name="act_oval3">국내/외\n인턴십</string>
+    <string name="act_oval4">국내/외\n인턴십</string>
+    <string name="act_oval5">튜티</string>
+    <string name="act_oval6">튜티</string>
+    <string name="act_oval7">튜터\n(학기제)</string>
+    <string name="act_oval8">튜터\n(학기제)</string>
+    <string name="act_oval9">튜터\n(행사)</string>
+    <string name="act_oval10">튜터\n(행사)</string>
+    <string name="act_oval11">튜터\n(행사)</string>
+    <string name="act_oval12">튜터\n(행사)</string>
+    <string name="act_oval13">튜터\n(행사)</string>
+    <string name="act_oval14">튜터\n(행사)</string>
+    <string name="act_oval15">튜터\n(행사)</string>
+    <string name="act_oval16">튜터\n(행사)</string>
+    <string name="act_oval17">창업\n동아리\n개설</string>
+    <string name="act_oval18">창업\n동아리\n개설</string>
+    <string name="act_oval19">창업\n동아리\n개설</string>
+    <string name="act_oval20">창업\n동아리\n개설</string>
+
+
+    //activity_lecture 특강
+    <string name="lec_oval1">오픈\n테마스쿨</string>
+    <string name="lec_oval2">오픈\n테마스쿨</string>
+    <string name="lec_oval3">오픈\n테마스쿨</string>
+    <string name="lec_oval4">오픈\n테마스쿨</string>
+    <string name="lec_oval5">오픈\n테마스쿨</string>
+    <string name="lec_oval6">오픈\n테마스쿨</string>
+    <string name="lec_oval7">창업특강</string>
+    <string name="lec_oval8">창업특강</string>
+    <string name="lec_oval9">창업특강</string>
+    <string name="lec_oval10">창업특강</string>
+    <string name="lec_oval11">창업특강</string>
+    <string name="lec_oval12">창업특강</string>
+    <string name="lec_oval13">창업특강</string>
+    <string name="lec_oval14">창업특강</string>
+    <string name="lec_oval15">창업특강</string>
+    <string name="lec_oval16">창업특강</string>
+    <string name="lec_oval17">SW\n교육센터\n프로그램</string>
+    <string name="lec_oval18">SW\n교육센터\n프로그램</string>
+    <string name="lec_oval19">SW\n교육센터\n프로그램</string>
+    <string name="lec_oval20">SW\n교육센터\n프로그램</string>
+
+
+    //activity_certificate 자격증
+    <string name="cer_oval1">TOPCIT\n참가</string>
+    <string name="cer_oval2">TOPCIT\n참가</string>
+    <string name="cer_oval3">TOPCIT\n참가</string>
+    <string name="cer_oval4">TOPCIT\n참가</string>
+    <string name="cer_oval5">TOPCIT\n성적\n우수자</string>
+    <string name="cer_oval6">IT\n자격증\nA급</string>
+    <string name="cer_oval7">IT\n자격증\nA급</string>
+    <string name="cer_oval8">IT\n자격증\nA급</string>
+    <string name="cer_oval9">IT\n자격증\nA급</string>
+    <string name="cer_oval10">IT\n자격증\nA급</string>
+    <string name="cer_oval11">IT\n자격증\nA급</string>
+    <string name="cer_oval12">IT\n자격증\nA급</string>
+    <string name="cer_oval13">IT\n자격증\nB급</string>
+    <string name="cer_oval14">IT\n자격증\nB급</string>
+    <string name="cer_oval15">IT\n자격증\nB급</string>
+    <string name="cer_oval16">IT\n자격증\nB급</string>
+    <string name="cer_oval17">IT\n자격증\nB급</string>
+    <string name="cer_oval18">IT\n자격증\nB급</string>
+    <string name="cer_oval19">IT\n자격증\nB급</string>
+    <string name="cer_oval20">IT\n자격증\nB급</string>
+
+
+    //activity_education 교육
+    <string name="edu_oval1">창업\n교과목\n이수</string>
+    <string name="edu_oval2">창업\n교과목\n이수</string>
+    <string name="edu_oval3">창업\n교과목\n이수</string>
+    <string name="edu_oval4">창업\n교과목\n이수</string>
+    <string name="edu_oval5">창업\n교과목\n이수</string>
+    <string name="edu_oval6">창업\n교과목\n이수</string>
+    <string name="edu_oval7">창업\n교과목\n이수</string>
+    <string name="edu_oval8">창업\n교과목\n이수</string>
+    <string name="edu_oval9">MLP\n이수</string>
+    <string name="edu_oval10">MLP\n이수</string>
+    <string name="edu_oval11">MLP\n이수</string>
+    <string name="edu_oval12">MLP\n이수</string>
+    <string name="edu_oval13">MLP\n이수</string>
+    <string name="edu_oval14">MLP\n이수</string>
+    <string name="edu_oval15">MLP\n이수</string>
+    <string name="edu_oval16">MLP\n이수</string>
+    <string name="edu_oval17">MLP\n이수</string>
+    <string name="edu_oval18">MLP\n이수</string>
+    <string name="edu_oval19">MLP\n이수</string>
+    <string name="edu_oval20">MLP\n이수</string>
+
+
+    //activity_project 프로젝트 및 봉사
+    <string name="pro_oval1">클래스\n프로젝트</string>
+    <string name="pro_oval2">클래스\n프로젝트</string>
+    <string name="pro_oval3">클래스\n프로젝트</string>
+    <string name="pro_oval4">클래스\n프로젝트</string>
+    <string name="pro_oval5">클래스\n프로젝트</string>
+    <string name="pro_oval6">산학협력\n공동\n(국내)</string>
+    <string name="pro_oval7">산학협력\n공동\n(국내)</string>
+    <string name="pro_oval8">산학협력\n공동\n(국내)</string>
+    <string name="pro_oval9">산학협력\n공동\n(국내)</string>
+    <string name="pro_oval10">오픈소스\nSW\n저장소 개설</string>
+    <string name="pro_oval11">오픈소스\nSW\n저장소 개설</string>
+    <string name="pro_oval12">오픈소스\nSW\n저장소 개설</string>
+    <string name="pro_oval13">IT 봉사</string>
+    <string name="pro_oval14">IT 봉사</string>
+    <string name="pro_oval15">IT 봉사</string>
+    <string name="pro_oval16">IT 봉사</string>
+    <string name="pro_oval17">IT 봉사</string>
+    <string name="pro_oval18">IT 봉사</string>
+    <string name="pro_oval19">IT 봉사</string>
+    <string name="pro_oval20">IT 봉사</string>
+
+
+    //activity_major 융합연계전공 및 연구활동
+    <string name="maj_oval1">복수전공\n이수</string>
+    <string name="maj_oval2">부전공\n이수</string>
+    <string name="maj_oval3">부전공\n이수</string>
+    <string name="maj_oval4">MD\n이수</string>
+    <string name="maj_oval5">MD\n이수</string>
+    <string name="maj_oval6">특허\n출원</string>
+    <string name="maj_oval7">특허\n출원</string>
+    <string name="maj_oval8">특허\n출원</string>
+    <string name="maj_oval9">특허\n등록</string>
+    <string name="maj_oval10">특허\n등록</string>
+    <string name="maj_oval11">특허\n등록</string>
+    <string name="maj_oval12">국제\n특허</string>
+    <string name="maj_oval13">학술\n대회</string>
+    <string name="maj_oval14">학술\n대회</string>
+    <string name="maj_oval15">국내학술\n(포스터)</string>
+    <string name="maj_oval16">국내학술\n(포스터)</string>
+    <string name="maj_oval17">국제\n학술대회</string>
+    <string name="maj_oval18">국제\n학술대회</string>
+    <string name="maj_oval19">국제학술\n(포스터)</string>
+    <string name="maj_oval20">국제학술\n(포스터)</string>
+
+
+    //activity_journer 논문 및 홍보, 모집
+    <string name="jou_oval1">국내\n저널</string>
+    <string name="jou_oval2">국내\n저널</string>
+    <string name="jou_oval3">국내\n저널</string>
+    <string name="jou_oval4">Scopus</string>
+    <string name="jou_oval5">Scopus</string>
+    <string name="jou_oval6">SCI(E)</string>
+    <string name="jou_oval7">서포터즈\n활동</string>
+    <string name="jou_oval8">서포터즈\n활동</string>
+    <string name="jou_oval9">사업단\n홍보</string>
+    <string name="jou_oval10">사업단\n홍보</string>
+    <string name="jou_oval11">사업단\n홍보</string>
+    <string name="jou_oval12">사업단\n홍보</string>
+    <string name="jou_oval13">사업단\n홍보</string>
+    <string name="jou_oval14">사업단\n홍보</string>
+    <string name="jou_oval15">사업단\n홍보</string>
+    <string name="jou_oval16">사업단\n홍보</string>
+    <string name="jou_oval17">사업단\n홍보</string>
+    <string name="jou_oval18">사업단\n홍보</string>
+    <string name="jou_oval19">AI+X\n연구소</string>
+    <string name="jou_oval20">대학원\n연구실\n인턴</string>
+
+</resources>
