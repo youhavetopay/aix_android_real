@@ -11,7 +11,8 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment">스마일리지 장학제도 운영방법</string>
+    <string name="operation">운영방법</string>
 
 
     //HomeFragment

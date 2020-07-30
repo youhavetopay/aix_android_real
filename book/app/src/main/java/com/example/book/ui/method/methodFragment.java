@@ -1,12 +1,17 @@
 package com.example.book.ui.method;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.book.R;
 
@@ -61,6 +66,15 @@ public class methodFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_method, container, false);
+        View root = inflater.inflate(R.layout.fragment_method, container, false);
+        TextView textView = root.findViewById(R.id.operation_text);
+
+        String str = textView.getText().toString();
+        SpannableStringBuilder ssb = new SpannableStringBuilder(str);
+        ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#273D6C")), 11, 15, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        textView.setText(ssb);
+
+
+        return root;
     }
 }

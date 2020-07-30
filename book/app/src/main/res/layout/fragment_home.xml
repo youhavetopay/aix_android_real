@@ -1,24 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment"
+    android:background="@drawable/back_1"
     android:weightSum="10"
-    android:background="@drawable/back_1">
+    tools:context=".ui.home.HomeFragment">
 
     <TextView
         android:id="@+id/text_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24dp"
+        app:layout_constraintVertical_weight="2"
         android:background="#dadada"
-        tools:ignore="MissingConstraints"
         android:gravity="center"
-        android:textStyle="bold"/>
+        android:padding="10dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
 
+
+    <TextView
+        android:id="@+id/oval5"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+
+        android:background="@drawable/btn_shape"
+        android:gravity="center"
+        android:text="@string/oval5"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/oval2"
+        app:layout_constraintVertical_bias="0.455"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/oval1"
@@ -30,10 +50,13 @@
         android:text="@string/oval1"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        android:layout_above="@+id/oval2"
-        android:layout_toLeftOf="@+id/oval2"
-        />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_home"
+        app:layout_constraintVertical_bias="0.082"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/oval2"
@@ -45,11 +68,30 @@
         android:text="@string/oval2"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
-        tools:ignore="MissingConstraints"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        tools:layout_editor_absoluteX="145dp"
-        tools:layout_editor_absoluteY="211dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_home"
+        app:layout_constraintVertical_bias="0.255"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/oval6"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+
+        android:background="@drawable/btn_shape"
+        android:gravity="center"
+        android:text="@string/oval6"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.835"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/oval3"
+        app:layout_constraintVertical_bias="0.375"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/oval3"
@@ -60,100 +102,87 @@
         android:text="@string/oval3"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
-        android:layout_above="@+id/oval2"
-        android:layout_toRightOf="@+id/oval2"
-        tools:ignore="MissingConstraints"
-         />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.835"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_home"
+        app:layout_constraintVertical_bias="0.082"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/oval4"
         android:layout_width="120dp"
         android:layout_height="120dp"
+
         android:background="@drawable/btn_shape"
         android:gravity="center"
         android:text="@string/oval4"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
-
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-13dp"
-        tools:layout_editor_absoluteY="48dp" />
-
-    <TextView
-        android:id="@+id/oval5"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:background="@drawable/btn_shape"
-        android:gravity="center"
-        android:text="@string/oval5"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="48dp" />
-
-    <TextView
-        android:id="@+id/oval6"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:background="@drawable/btn_shape"
-        android:gravity="center"
-        android:text="@string/oval6"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="185dp" />
-
-    <TextView
-        android:id="@+id/oval7"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:background="@drawable/btn_shape"
-        android:gravity="center"
-        android:text="@string/oval7"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="221dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/oval1"
+        app:layout_constraintVertical_bias="0.375"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/oval8"
         android:layout_width="120dp"
         android:layout_height="120dp"
+
         android:background="@drawable/btn_shape"
         android:gravity="center"
         android:text="@string/oval8"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.835"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/oval6"
+        app:layout_constraintVertical_bias="0.588"
+        tools:ignore="MissingConstraints" />
 
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="52dp"
-        tools:layout_editor_absoluteY="305dp" />
+    <TextView
+        android:id="@+id/oval7"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+
+        android:background="@drawable/btn_shape"
+        android:gravity="center"
+        android:text="@string/oval7"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/oval4"
+        app:layout_constraintVertical_bias="0.588"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/oval9"
         android:layout_width="120dp"
         android:layout_height="120dp"
+
         android:background="@drawable/btn_shape"
         android:gravity="center"
         android:text="test"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
-
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="94dp"
-        tools:layout_editor_absoluteY="364dp" />
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="610dp" />
 
 
     <!--    <ImageView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:id="@+id/iv"-->
-<!--        android:src-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:id="@+id/iv"-->
+    <!--        android:src-->
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

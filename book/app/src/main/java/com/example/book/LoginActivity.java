@@ -28,6 +28,12 @@ public class LoginActivity extends AppCompatActivity {
     private Button btn_login;
     public static String UID;
 
+
+    /**
+     * 아이디 moon
+     * 비밀벊호 moon12
+     * **/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +57,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         try {
+                            System.out.println("login  "+response);
                             JSONObject jsonObject = new JSONObject(response);
                             boolean success = jsonObject.getBoolean("success");
                             if (success) {
@@ -61,6 +68,8 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), "로그인에 성공하셨습니다.", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                 intent.putExtra("USER_ID", USER_ID);
+                                et_id.setText("");
+                                et_password.setText("");
                                 startActivity(intent);
 
                             } else { // 회원등록에 실패할 경우

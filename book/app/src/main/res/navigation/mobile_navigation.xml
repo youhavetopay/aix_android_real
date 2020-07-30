@@ -26,6 +26,6 @@
     <fragment
         android:id="@+id/nav_method"
         android:name="com.example.book.ui.method.methodFragment"
-        android:label="Method"
+        android:label="@string/operation"
         tools:layout="@layout/fragment_method" />
 </navigation>

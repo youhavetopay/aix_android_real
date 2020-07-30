@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.Navigation;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.RequestQueue;
@@ -31,6 +32,7 @@ import com.example.book.MajorActivity;
 import com.example.book.ProjectActivity;
 import com.example.book.R;
 import com.example.book.TestActivity;
+import com.google.android.material.navigation.NavigationView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -48,27 +50,44 @@ public class HomeFragment extends Fragment {
 
     private TextView oval1, oval2, oval3, oval4, oval5, oval6, oval7, oval8, oval9;
 
+    private TextView header_user_name, header_total_score;
+    private String user_name;
+
     ArrayList<JSONObject> arrayJson = new ArrayList<JSONObject>();
 
     private Context mContext;
     Activity activity;
 
+    private Object OnNamePickerSetListener;
+    private OnNamePickerSetListener onNamePickerSetListener;
+
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        if (context instanceof Activity)
-            activity = (Activity) context;
+        if (context instanceof OnNamePickerSetListener) {
+            onNamePickerSetListener = (OnNamePickerSetListener) context;
+        }
+        else{
+            throw new RuntimeException(context.toString() + "must implement OnNamePickerSetListener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        onNamePickerSetListener = null;
     }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         final String USER_ID = UID;
+        user_name = null;
 
 
 //        homeViewModel =
 //                ViewModelProviders.of(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        final View root = inflater.inflate(R.layout.fragment_home, container, false);
 //        final TextView textView = root.findViewById(R.id.text_home);
 //        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
 //            @Override
@@ -84,6 +103,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onResponse(String response) {
                 try {
+                    System.out.println("adsfjalskjfalkjfd     "+response);
                     JSONObject jsonObject = new JSONObject(response);
                     //배열 생성
                     final JSONArray jsonArray = new JSONArray();
@@ -98,7 +118,11 @@ public class HomeFragment extends Fragment {
                     JSONObject[] jsons = new JSONObject[arrayJson.size()];
                     arrayJson.toArray(jsons);
 
-                    text_home.setText(arrayJson.get(0).getString("USER_ID") + "의 스마일리지");
+                    text_home.setText(arrayJson.get(0).getString("USER_NAME") + "의 스마일리지");
+                    user_name = arrayJson.get(0).getString("USER_NAME");
+
+                    onNamePickerSetListener.onNamePickerSet(user_name);
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -109,8 +133,7 @@ public class HomeFragment extends Fragment {
         RequestQueue queue = Volley.newRequestQueue(getActivity());
         queue.add(homeRequest);
 
-
-
+        System.out.println("이름;  "+user_name);
 
         TextView Oval1 = (TextView)root.findViewById(R.id.oval1);
         TextView Oval2 = (TextView)root.findViewById(R.id.oval2);
@@ -206,8 +229,14 @@ public class HomeFragment extends Fragment {
 
         //이미지뷰 테스트
 
+
         return root;
     }
+
+    public interface OnNamePickerSetListener{
+        void onNamePickerSet(String name);
+    }
+
 
 
 
