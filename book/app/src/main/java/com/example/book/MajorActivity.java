@@ -3,6 +3,7 @@ package com.example.book;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -11,12 +12,20 @@ public class MajorActivity extends AppCompatActivity {
     private TextView maj_oval1, maj_oval2, maj_oval3, maj_oval4, maj_oval5, maj_oval6, maj_oval7, maj_oval8, maj_oval9, maj_oval10;
     private TextView maj_oval11, maj_oval12, maj_oval13, maj_oval14, maj_oval15, maj_oval16, maj_oval17, maj_oval18, maj_oval19, maj_oval20;
 
+    private TextView major_name_title;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActionBar ab = getSupportActionBar();
         ab.setTitle("융합연계전공 및 연구활동");
         setContentView(R.layout.activity_major);
+
+        Intent intent = getIntent();
+        String user_name = intent.getExtras().getString("user_name");
+
+        major_name_title = findViewById(R.id.major_name_title);
+        major_name_title.setText(user_name+"의 융합연계전공 및 연구활동 Stamp");
 
         maj_oval1 = findViewById(R.id.maj_oval1);
         maj_oval2 = findViewById(R.id.maj_oval2);

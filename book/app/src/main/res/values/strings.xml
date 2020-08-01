@@ -7,9 +7,11 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="main_title">SW중심대학사업단</string>
+
+    <string name="menu_home">메인화면</string>
+    <string name="menu_gallery">외부대회 인증</string>
+    <string name="menu_slideshow">장학금 신청</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">스마일리지 장학제도 운영방법</string>
     <string name="operation">운영방법</string>

@@ -29,9 +29,9 @@
 
             <EditText
                 android:id="@+id/et_id"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="30dp"
+                android:layout_margin="10dp"
                 android:ems="30"
                 android:gravity="center_horizontal"
                 android:hint="ID"
@@ -39,7 +39,7 @@
 
             <EditText
                 android:id="@+id/et_password"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:ems="20"

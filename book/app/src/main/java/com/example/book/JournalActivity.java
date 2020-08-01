@@ -3,6 +3,7 @@ package com.example.book;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -11,6 +12,7 @@ public class JournalActivity extends AppCompatActivity {
     private TextView jou_oval1, jou_oval2, jou_oval3, jou_oval4, jou_oval5, jou_oval6, jou_oval7, jou_oval8, jou_oval9, jou_oval10;
     private TextView jou_oval11, jou_oval12, jou_oval13, jou_oval14, jou_oval15, jou_oval16, jou_oval17, jou_oval18, jou_oval19, jou_oval20;
 
+    private TextView journal_name_title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +20,12 @@ public class JournalActivity extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         ab.setTitle("논문 및 홍보, 모집");
         setContentView(R.layout.activity_journal);
+
+        Intent intent = getIntent();
+        String user_name = intent.getExtras().getString("user_name");
+
+        journal_name_title = findViewById(R.id.journal_name_title);
+        journal_name_title.setText(user_name+"의 논문 및 홍보, 모집 Stamp");
 
         jou_oval1 = findViewById(R.id.jou_oval1);
         jou_oval2 = findViewById(R.id.jou_oval2);

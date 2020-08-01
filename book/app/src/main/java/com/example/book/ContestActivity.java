@@ -1,5 +1,6 @@
 package com.example.book;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +19,8 @@ public class ContestActivity extends AppCompatActivity {
     private TextView con_oval11, con_oval12, con_oval13, con_oval14, con_oval15, con_oval16, con_oval17, con_oval18, con_oval19, con_oval20;
     private Button btn_test;
 
+    private TextView contest_name_title;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +28,11 @@ public class ContestActivity extends AppCompatActivity {
         ab.setTitle("경진대회");
         setContentView(layout.activity_contest);
 
+        Intent intent = getIntent();
+        String user_name = intent.getExtras().getString("user_name");
+
+        contest_name_title = findViewById(id.contest_name_title);
+        contest_name_title.setText(user_name+"의 경진대회 Stamp");
 
         btn_test = findViewById(id.btn_test);
         con_oval1 = findViewById(id.con_oval1);

@@ -150,6 +150,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), ContestActivity.class);
+                intent.putExtra("user_name",user_name);
                 startActivity(intent);
             }
         });
@@ -159,6 +160,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), ActivityActivity.class);
+                intent.putExtra("user_name",user_name);
                 startActivity(intent);
             }
         });
@@ -168,6 +170,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), LectureActivity.class);
+                intent.putExtra("user_name",user_name);
                 startActivity(intent);
             }
         });
@@ -177,6 +180,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), CertificateActivity.class);
+                intent.putExtra("user_name",user_name);
                 startActivity(intent);
             }
         });
@@ -186,6 +190,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), EducationActivity.class);
+                intent.putExtra("user_name",user_name);
                 startActivity(intent);
             }
         });
@@ -195,6 +200,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), ProjectActivity.class);
+                intent.putExtra("user_name",user_name);
                 startActivity(intent);
             }
         });
@@ -204,6 +210,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), MajorActivity.class);
+                intent.putExtra("user_name",user_name);
                 startActivity(intent);
             }
         });
@@ -213,6 +220,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), JournalActivity.class);
+                intent.putExtra("user_name",user_name);
                 startActivity(intent);
             }
         });
@@ -223,6 +231,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), TestActivity.class);
+                intent.putExtra("user_name",user_name);
                 startActivity(intent);
             }
         });
