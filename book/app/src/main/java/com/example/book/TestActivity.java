@@ -2,6 +2,8 @@ package com.example.book;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,137 +30,91 @@ import static com.example.book.LoginActivity.UID;
 
 public class TestActivity extends AppCompatActivity {
 
-    ArrayList<JSONObject> arrayJson_test = new ArrayList<JSONObject>();
-    ArrayList<JSONObject> arrayJson_score = new ArrayList<JSONObject>();
+    LinearLayout linearLayout;
+    LinearLayout.LayoutParams layoutParams;
 
-    String USER_ID = UID;
+    private ArrayList<String[]> mainlist = new ArrayList<String[]>();
+
+    private ArrayList<String> user_get_list = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_test);
+        setContentView(R.layout.activity_test);
 
-        //레이아웃 생성
-        LinearLayout linearLayout = new LinearLayout(this);
+        linearLayout = new LinearLayout(this);
         linearLayout.setOrientation(LinearLayout.VERTICAL);
 
-        //레이아웃 파라미터 생성 layout_width, layout_height
-        LinearLayout.LayoutParams linearLayoutParams = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT
-        );
+        layoutParams =
+                new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
 
-        final List<String> itemlist_test = new ArrayList<>();
-
-        final List<String> itemlist_score = new ArrayList<>();
-
-        Response.Listener<String> responseListener = new Response.Listener<String>() {
+        Response.Listener<String> stringListener = new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
+                    System.out.println("response :"+ response);
                     JSONObject jsonObject = new JSONObject(response);
-                    //배열 생성
-                    final JSONArray jsonArray = new JSONArray();
-                    //배열 입력
-                    jsonArray.put(jsonObject);
 
-                    for(int k = 0; k < jsonArray.length(); k++){
-                        JSONObject tempJson = jsonArray.getJSONObject(k);
-                        arrayJson_test.add(tempJson);
+                    // DB에 존재하는 스탬프 값 들고 오기
+                    JSONArray jsonArray = jsonObject.optJSONArray("stamp_result");
+                    System.out.println("제이슨 1 :"+jsonArray.toString());
+
+                    // 사용자가 획득한 스탬프 값 들고 오기
+                    JSONArray jsonArray2 = jsonObject.optJSONArray("user_get_result");
+                    System.out.println("제이슨2 : "+jsonArray2.toString());
+
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject c = jsonArray.getJSONObject(i);
+                        mainlist.add(new String[]{c.getString("STEMP_CODE")
+                                , c.getString("STEMP_NAME")
+                                , c.getString("STEMP_SCORE")});
+
                     }
 
-                    JSONObject[] jsons_test = new JSONObject[arrayJson_test.size()];
-                    arrayJson_test.toArray(jsons_test);
-
-                    for (int i = 0; i < arrayJson_test.size(); i++) {
-                        itemlist_test.add(
-                                arrayJson_test.get(i).getString("STAMP_CD") +
-                                        arrayJson_test.get(i).getString("STAMP_NAME") );
+                    for(int i=0; i<jsonArray2.length(); i++){
+                        JSONObject c = jsonArray2.getJSONObject(i);
+                        user_get_list.add(c.getString("STEMP_CODE"));
                     }
 
 
-                } catch (JSONException e) {
+                    // 가져온 스탬프 정보들 화면에 띄우기
+                    for (int i = 0; i < mainlist.size(); i++) {
+                        System.out.println(mainlist.get(i)[0] + mainlist.get(i)[1] + mainlist.get(i)[2]);
+                        TextView textView = new TextView(getApplicationContext());
+                        textView.setText(mainlist.get(i)[0]+ " " + mainlist.get(i)[1] + " " + mainlist.get(i)[2]);
+                        textView.setLayoutParams(layoutParams);
+
+                        // 사용자가 획득한 스탬프는 글자 색상 변경
+                        if(user_get_list.contains(mainlist.get(i)[0])){
+                            textView.setTextColor(Color.parseColor("#FF6A89"));
+                        }
+
+                        linearLayout.addView(textView);
+                        setContentView(linearLayout);
+                    }
+
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
+
+
             }
         };
 
-        TestRequest testRequest = new TestRequest(USER_ID, responseListener);
-        RequestQueue queue = Volley.newRequestQueue(TestActivity.this);
+        TestRequest testRequest = new TestRequest("20201111", stringListener);
+        RequestQueue queue = Volley.newRequestQueue(this);
         queue.add(testRequest);
 
-
-
-
-        Response.Listener<String> responseListener2 = new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    //배열 생성
-                    final JSONArray jsonArray = new JSONArray();
-                    //배열 입력
-                    jsonArray.put(jsonObject);
-
-                    for(int k = 0; k < jsonArray.length(); k++){
-                        JSONObject tempJson = jsonArray.getJSONObject(k);
-                        arrayJson_score.add(tempJson);
-                    }
-
-                    JSONObject[] jsons = new JSONObject[arrayJson_score.size()];
-                    arrayJson_score.toArray(jsons);
-
-                    for (int i = 0; i < arrayJson_score.size(); i++) {
-                        itemlist_score.add(
-                                arrayJson_score.get(i).getString("STAMP_CD") +
-                                        arrayJson_score.get(i).getString("STAMP_NAME") );
-                    }
-
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        };
-
-        ScoreRequest scoreRequest = new ScoreRequest(USER_ID, responseListener2);
-        RequestQueue queue1 = Volley.newRequestQueue(TestActivity.this);
-        queue1.add(scoreRequest);
-
-
-        TextView[] textView = new TextView[itemlist_score.size()];
-
-        for (int i=0; i<itemlist_score.size(); i++){
-            textView[i] = new TextView(this);
-            textView[i].setText(itemlist_score.get(i));
-            textView[i].setBackgroundDrawable(getResources().getDrawable(R.drawable.circle));
-            textView[i].setGravity(Gravity.CENTER);
-            textView[i].setLayoutParams(linearLayoutParams);
-        }
-        //텍스트뷰를 생성한 후 파라미터 설정
-//        final TextView test1 = new TextView(this);
-//        test1.setText("test");
-//        test1.setBackgroundDrawable(getResources().getDrawable(R.drawable.circle));
-//        test1.setGravity(Gravity.CENTER);
-//        test1.setLayoutParams(linearLayoutParams);
-//        test1.setBackgroundDrawable(getResources().getDrawable(R.drawable.blockchain));
-
-        //생성한 텍스트뷰를 레이아웃에 추가
-        //linearLayout.addView(test1);
-
-        //화면에 표시 되도록 setContentView 실행
-        setContentView(linearLayout);
     }
-
-
 
 
     public class TestRequest extends StringRequest {
         // 서버 URL 실행
-        final static private String URL = "http://yunii23.dothome.co.kr/test.php";
+        final static private String URL = "http://zkwpdlxm.dothome.co.kr/get_STEMP.php";
         private Map<String, String> map;
 
-        public TestRequest(String USER_ID, Response.Listener<String> listener){
+        public TestRequest(String USER_ID, Response.Listener<String> listener) {
             super(Method.POST, URL, listener, null);
 
             map = new HashMap<>();
@@ -167,30 +123,11 @@ public class TestActivity extends AppCompatActivity {
 
         @Override
         protected Map<String, String> getParams() throws AuthFailureError {
-            Log.d(String.valueOf(map),"dfiajifjiaf");
+            Log.d(String.valueOf(map), "dfiajifjiaf");
             return map;
         }
 
     }
 
 
-    public class ScoreRequest extends StringRequest {
-        // 서버 URL 실행
-        final static private String URL = "http://yunii23.dothome.co.kr/score.php";
-        private Map<String, String> map;
-
-        public ScoreRequest(String USER_ID, Response.Listener<String> listener){
-            super(Method.POST, URL, listener, null);
-
-            map = new HashMap<>();
-            map.put("USER_ID", USER_ID);
-        }
-
-        @Override
-        protected Map<String, String> getParams() throws AuthFailureError {
-            Log.d(String.valueOf(map),"dfiddddddddddddddajifjiaf");
-            return map;
-        }
-
-    }
 }
